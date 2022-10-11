@@ -7,6 +7,6 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.post("/age/")
-async def age_function():
-    return {"Age": "We`ll be predicting in future"}
+@app.get("/age/{age_val}")
+async def age_function(age_val:int):
+    return {"Age": age_val}
